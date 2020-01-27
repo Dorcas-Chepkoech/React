@@ -5,9 +5,9 @@ function Todo({todo, index, completeTodo, removeTodo}){
   return<div style={{textDecoration: todo.isCompleted ? 'line-through' : ''}}
    className="todo">
      {todo.text} 
-     <button onClick={() => completeTodo(index)}>Complete
+     <button className="btn" onClick={() => completeTodo(index)}>Complete
      </button>
-     <button onClick={() => removeTodo(index)}>X</button>
+     <button className="btn" onClick={() => removeTodo(index)}>X</button>
      </div>
   
 }
@@ -63,13 +63,16 @@ const removeTodo = index => {
 }
   return(
     <div className="app">
+      <div className="todo-container">
+        
       <div className="todo-list">
+      <h1>My Todo List</h1>
         {todos.map((todo, index) => (
           <Todo key={index} index={index} todo={todo} completeTodo={completeTodo} removeTodo={removeTodo}/>
         ))}
         <TodoForm addTodo={addTodo}/>
 
-      </div>
+      </div></div>
     </div>
   )
 
